@@ -9,10 +9,11 @@ import model.Translate_Words;
  *
  * @author ASUS
  */
-public class DictionaryRepository {
+public class DictionaryRepository implements IDictionary {
 
     Validate validate = new Validate();
 
+    @Override
     public void addWord(HashMap<String, Translate_Words> tMap, Translate_Words tw) {
         String choice = "Y";
         while (choice.equalsIgnoreCase("Y")) {
@@ -29,6 +30,7 @@ public class DictionaryRepository {
         }
     }
 
+    @Override
     public void deleteWord(HashMap<String, Translate_Words> tMap, Translate_Words tw) {
         if (tMap.isEmpty()) {
             System.out.println("Dictionary is empty.");
@@ -40,6 +42,7 @@ public class DictionaryRepository {
         }
     }
 
+    @Override
     public void search(HashMap<String, Translate_Words> tMap, Translate_Words tw) {
         if (tMap.isEmpty()) {
             System.out.println("Dictionary is empty.");
